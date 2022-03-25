@@ -28,7 +28,7 @@ public class NumberInferenceManager : MonoBehaviour
 
          for (var i = 0; i < 28 * 28; i++)
          {
-             pixels[i % 28, i / 28] = colors[i].r * 0.299f + colors[i].g * 0.587f + colors[i].b * 0.114f;
+             pixels[i % 28, i / 28] = colors[i].grayscale;
          }
 
          var result = _mnistInferencer.Execute(pixels);

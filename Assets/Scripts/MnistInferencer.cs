@@ -28,7 +28,6 @@ public class MnistInferencer : IDisposable
         {
             for (var x = 0; x < 28; x++)
             {
-                // 27 - y, x
                 inputTensor[0, 27 - y, x, 0] = input[x, y];
             }
         }
