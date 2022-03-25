@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using Unity.Barracuda;
-using UnityEngine;
 
 public class MnistInferencer : IDisposable
 {

@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class NumberInferenceManager : MonoBehaviour
 {
+    private const int TexturePixelSize = 28;
+    
     [SerializeField] private NNModel model;
     [SerializeField] private RawImage image;
     [SerializeField] private Text numberText;
@@ -24,11 +26,11 @@ public class NumberInferenceManager : MonoBehaviour
     private void Update()
     {
          var colors = (image.texture as Texture2D).GetPixels();
-         var pixels = new float[28, 28];
+         var pixels = new float[TexturePixelSize, TexturePixelSize];
 
-         for (var i = 0; i < 28 * 28; i++)
+         for (var i = 0; i < TexturePixelSize * TexturePixelSize; i++)
          {
-             pixels[i % 28, i / 28] = colors[i].grayscale;
+             pixels[i % TexturePixelSize, i / TexturePixelSize] = colors[i].grayscale;
          }
 
          var result = _mnistInferencer.Execute(pixels);
