@@ -37,7 +37,7 @@ public class Painter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton (0)) 
+        if (Input.GetMouseButton(0)) 
         {
             var results = new List<RaycastResult>();
             _pointer.position = Input.mousePosition;
